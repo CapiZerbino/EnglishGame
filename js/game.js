@@ -289,7 +289,8 @@
       if (ch === "-") { s += "-"; continue; }
       s += i < en.hinted ? ch : "<i>_</i>";
     }
-    en.el.querySelector(".e-blanks").innerHTML = s;
+    const b = en.el.querySelector(".e-blanks"); b.innerHTML = s;
+    b.classList.toggle("long", word.length >= 13);
   }
   function enemyX(en) {
     const W = arena.clientWidth, half = en.el.offsetWidth / 2 + 8;

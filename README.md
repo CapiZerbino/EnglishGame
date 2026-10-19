@@ -6,7 +6,7 @@ quái vật mang **nghĩa tiếng Việt** (và định nghĩa tiếng Anh) rơi
 
 ## Tính năng
 
-- **300 từ · 30 unit · 3 cấp độ** (A1–A2, B1–B2, C1), mỗi unit 10 từ theo chủ đề.
+- **390 từ · 39 unit · 3 cấp độ** (A1–A2, B1–B2, C1), mỗi unit 10 từ theo chủ đề, gồm các unit chuyên đề **tài chính** (Money basics, Personal finance, Banking & markets, Corporate finance, Investing) và **tâm lý học** (Feelings & mind, Psychology basics, Cognitive psychology, Clinical psychology).
 - **2 chế độ chơi**
   - ⌨️ **Gõ từ**: quái hiện nghĩa tiếng Việt + định nghĩa tiếng Anh + số chữ cái, gõ từ để bắn.
   - 🎧 **Nghe & gõ**: quái không hiện nghĩa, chỉ phát âm (Web Speech API); nghe rồi gõ lại đúng chính tả. Bấm vào quái để nghe lại.

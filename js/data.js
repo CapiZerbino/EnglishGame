@@ -158,6 +158,36 @@ const VOCAB_LEVELS = [
           ["camping", "n", "cắm trại", "sleeping outdoors in a tent", "We went ___ in the mountains."],
           ["puzzle", "n", "trò chơi ghép hình, câu đố", "a game you solve by thinking", "This ___ has 1000 pieces."]
         ]
+      },
+      {
+        name: "Money basics",
+        words: [
+          ["save", "v", "tiết kiệm (tiền)", "to keep money instead of spending it", "I ___ 20% of my salary every month."],
+          ["spend", "v", "chi tiêu", "to use money to buy things", "Don't ___ all your money on games."],
+          ["coin", "n", "đồng xu", "a small round piece of metal used as money", "He found a gold ___ on the beach."],
+          ["bank", "n", "ngân hàng", "a place that keeps and lends money", "I need to go to the ___ to open an account."],
+          ["loan", "n", "khoản vay", "money that you borrow and must pay back", "She took out a ___ to buy a motorbike."],
+          ["bill", "n", "hóa đơn (tiền điện, nước...)", "a document showing how much you must pay", "The electricity ___ is very high this month."],
+          ["earn", "v", "kiếm (tiền)", "to receive money for work", "How much do you ___ a month?"],
+          ["afford", "v", "có đủ tiền mua", "to have enough money to buy something", "I can't ___ a new laptop right now."],
+          ["account", "n", "tài khoản (ngân hàng)", "an arrangement with a bank to keep your money", "Please transfer the money to my ___."],
+          ["rich", "adj", "giàu", "having a lot of money", "He became ___ by selling coffee."]
+        ]
+      },
+      {
+        name: "Feelings & mind",
+        words: [
+          ["mood", "n", "tâm trạng", "the way you feel at a particular time", "She's in a good ___ today."],
+          ["stress", "n", "căng thẳng", "worry caused by a difficult situation", "Exams cause a lot of ___."],
+          ["calm", "adj", "bình tĩnh", "relaxed and not worried", "Stay ___ and breathe slowly."],
+          ["memory", "n", "trí nhớ; ký ức", "the ability to remember things", "My grandfather has a great ___."],
+          ["habit", "n", "thói quen", "something you do regularly, often without thinking", "Reading before bed is a good ___."],
+          ["dream", "n", "giấc mơ", "pictures and events in your mind while you sleep", "I had a strange ___ last night."],
+          ["lonely", "adj", "cô đơn", "unhappy because you are alone", "He felt ___ in the new city."],
+          ["worry", "v", "lo lắng", "to keep thinking about problems", "Don't ___, everything will be fine."],
+          ["patient", "adj", "kiên nhẫn", "able to wait calmly without getting angry", "Be ___, the bus is coming."],
+          ["focus", "v", "tập trung", "to give all your attention to something", "I can't ___ with this noise."]
+        ]
       }
     ]
   },
@@ -316,6 +346,51 @@ const VOCAB_LEVELS = [
           ["acquaintance", "n", "người quen", "someone you know slightly", "He's just an ___, not a friend."],
           ["bond", "n", "mối liên kết, gắn bó", "a close connection between people", "The ___ between the twins is strong."]
         ]
+      },
+      {
+        name: "Personal finance",
+        words: [
+          ["income", "n", "thu nhập", "money you receive regularly from work or investments", "Her monthly ___ is about 20 million dong."],
+          ["expense", "n", "chi phí, khoản chi", "money spent on something", "Rent is my biggest ___."],
+          ["savings", "n", "tiền tiết kiệm", "money you have saved, usually in a bank", "He used his ___ to start a business."],
+          ["debt", "n", "nợ", "money that you owe to someone", "They are struggling to pay off their ___."],
+          ["interest", "n", "lãi suất; tiền lãi", "extra money paid when you borrow or earn when you save", "The bank pays 6% ___ a year."],
+          ["mortgage", "n", "khoản vay thế chấp mua nhà", "a loan used to buy a house", "They took out a 25-year ___."],
+          ["insurance", "n", "bảo hiểm", "an agreement where a company pays if something bad happens", "Health ___ covers hospital costs."],
+          ["tax", "n", "thuế", "money paid to the government", "Income ___ is deducted from your salary."],
+          ["pension", "n", "lương hưu", "money paid regularly to someone who has retired", "He lives on a small ___."],
+          ["installment", "n", "khoản trả góp", "one of several payments made over time", "I'm paying for the phone in twelve ___s."]
+        ]
+      },
+      {
+        name: "Banking & markets",
+        words: [
+          ["deposit", "v", "gửi tiền (vào ngân hàng)", "to put money into a bank account", "I ___ed 5 million dong yesterday."],
+          ["withdraw", "v", "rút tiền", "to take money out of a bank account", "You can ___ cash from any ATM."],
+          ["transfer", "v", "chuyển khoản", "to move money from one account to another", "Please ___ the money before Friday."],
+          ["stock", "n", "cổ phiếu", "a share in the ownership of a company", "He bought ___ in a tech company."],
+          ["shareholder", "n", "cổ đông", "a person who owns shares in a company", "___s receive part of the profit."],
+          ["dividend", "n", "cổ tức", "part of a company's profit paid to shareholders", "The company paid a 5% ___."],
+          ["currency", "n", "tiền tệ", "the money used in a particular country", "The ___ of Japan is the yen."],
+          ["exchange rate", "n", "tỷ giá hối đoái", "the value of one currency compared to another", "The ___ changes every day."],
+          ["credit", "n", "tín dụng; mua chịu", "an arrangement to buy now and pay later", "I bought the TV on ___."],
+          ["fee", "n", "phí", "money paid for a service", "The bank charges a small transfer ___."]
+        ]
+      },
+      {
+        name: "Psychology basics",
+        words: [
+          ["behavior", "n", "hành vi", "the way a person or animal acts", "Rewards can change a child's ___."],
+          ["motivation", "n", "động lực", "the reason or desire to do something", "Money is not his main ___."],
+          ["personality", "n", "tính cách, nhân cách", "the type of person you are, shown by how you behave", "She has a warm and friendly ___."],
+          ["therapy", "n", "liệu pháp, trị liệu", "treatment to help with a mental or physical problem", "Talking ___ helped him a lot."],
+          ["depression", "n", "trầm cảm", "a serious illness that makes you feel very sad and hopeless", "She was treated for ___."],
+          ["self-esteem", "n", "lòng tự trọng", "the feeling of respect for yourself", "Praise builds children's ___."],
+          ["mindset", "n", "tư duy, lối suy nghĩ", "a person's way of thinking and attitudes", "A growth ___ helps you learn from failure."],
+          ["instinct", "n", "bản năng", "a natural tendency to behave in a certain way", "Birds build nests by ___."],
+          ["concentration", "n", "sự tập trung", "the ability to think carefully about one thing", "Noise breaks my ___."],
+          ["emotional", "adj", "thuộc về cảm xúc; dễ xúc động", "connected with feelings", "He gets ___ when he talks about his mother."]
+        ]
       }
     ]
   },
@@ -473,6 +548,66 @@ const VOCAB_LEVELS = [
           ["urbanization", "n", "đô thị hóa", "the growth of cities", "Rapid ___ strains housing."],
           ["geopolitical", "adj", "địa chính trị", "relating to politics affected by geography", "The region faces ___ tension."],
           ["unprecedented", "adj", "chưa từng có", "never having happened before", "The heatwave was ___."]
+        ]
+      },
+      {
+        name: "Corporate finance",
+        words: [
+          ["asset", "n", "tài sản", "something valuable a company or person owns", "Real estate is their largest ___."],
+          ["liability", "n", "khoản nợ phải trả", "money a company owes", "The firm's ___s exceed its assets."],
+          ["equity", "n", "vốn chủ sở hữu", "the value of a company's shares; ownership", "The founders hold 60% of the ___."],
+          ["leverage", "n", "đòn bẩy tài chính", "the use of borrowed money to increase potential returns", "High ___ makes a company risky."],
+          ["depreciation", "n", "khấu hao", "the fall in value of an asset over time", "Cars suffer rapid ___."],
+          ["valuation", "n", "định giá", "an estimate of how much a company is worth", "The startup reached a ___ of one billion dollars."],
+          ["cash flow", "n", "dòng tiền", "money moving into and out of a business", "Poor ___ can sink a profitable firm."],
+          ["solvent", "adj", "có khả năng thanh toán nợ", "having enough money to pay debts", "The bank is still ___ despite losses."],
+          ["audit", "n", "kiểm toán", "an official examination of financial records", "The annual ___ found no errors."],
+          ["overhead", "n", "chi phí cố định, chi phí chung", "regular business costs such as rent and salaries", "Working remotely reduces ___."]
+        ]
+      },
+      {
+        name: "Investing",
+        words: [
+          ["diversify", "v", "đa dạng hóa (danh mục đầu tư)", "to spread investments across different assets to reduce risk", "Never put all your money in one stock; ___."],
+          ["speculation", "n", "đầu cơ", "buying assets hoping to profit from price changes, often with high risk", "The price rise was driven by ___."],
+          ["yield", "n", "lợi suất", "the income an investment produces, as a percentage", "Government bonds offer a 4% ___."],
+          ["portfolio", "n", "danh mục đầu tư", "all the investments owned by a person or organisation", "Her ___ includes stocks and gold."],
+          ["hedge", "v", "phòng ngừa rủi ro", "to protect against financial loss", "Investors ___ against inflation by buying gold."],
+          ["bubble", "n", "bong bóng (giá tài sản)", "a situation where prices rise far above real value and then collapse", "The housing ___ burst in 2008."],
+          ["compound interest", "n", "lãi kép", "interest calculated on both the original amount and previous interest", "___ makes small savings grow huge over time."],
+          ["maturity", "n", "kỳ hạn, ngày đáo hạn", "the date when a loan or bond must be repaid", "The bond reaches ___ in ten years."],
+          ["bearish", "adj", "giảm giá (xu hướng thị trường)", "expecting prices to fall", "Analysts are ___ on tech stocks this year."],
+          ["arbitrage", "n", "kinh doanh chênh lệch giá", "profiting from price differences in different markets", "Traders use ___ between exchanges."]
+        ]
+      },
+      {
+        name: "Cognitive psychology",
+        words: [
+          ["heuristic", "n", "phương pháp suy nghiệm, lối tắt tư duy", "a mental shortcut used to make quick decisions", "Rules of thumb are a kind of ___."],
+          ["conditioning", "n", "sự điều kiện hóa", "learning in which behaviour becomes linked to a stimulus", "Pavlov's dogs showed classical ___."],
+          ["reinforcement", "n", "sự củng cố (hành vi)", "a reward or punishment that makes behaviour more or less likely", "Positive ___ works better than punishment."],
+          ["dissonance", "n", "sự bất hòa (nhận thức)", "discomfort from holding two conflicting beliefs", "Smokers who know the risks feel cognitive ___."],
+          ["placebo", "n", "giả dược", "a fake treatment that works because the patient believes in it", "Half the patients received a ___."],
+          ["priming", "n", "sự mồi (nhận thức)", "exposure to one thing influencing a response to another", "___ with the word 'old' made people walk slower."],
+          ["attention span", "n", "khoảng chú ý", "the length of time a person can concentrate", "Social media shortens our ___."],
+          ["schema", "n", "lược đồ nhận thức", "a mental framework for organising knowledge", "Children build a ___ for what a 'dog' is."],
+          ["salient", "adj", "nổi bật, dễ nhận thấy", "most noticeable or important", "Fear makes threats more ___."],
+          ["metacognition", "n", "siêu nhận thức", "awareness and understanding of your own thinking", "Good learners use ___ to plan their study."]
+        ]
+      },
+      {
+        name: "Clinical psychology",
+        words: [
+          ["trauma", "n", "sang chấn tâm lý", "severe emotional shock after a terrible experience", "War leaves deep ___ in children."],
+          ["burnout", "n", "kiệt sức (do công việc)", "exhaustion caused by long-term stress", "Nurses face a high risk of ___."],
+          ["stigma", "n", "sự kỳ thị", "a strong feeling of disapproval that society has about something", "The ___ around mental illness stops people seeking help."],
+          ["compulsive", "adj", "cưỡng chế, không kiểm soát được", "unable to stop doing something", "He is a ___ gambler."],
+          ["delusion", "n", "hoang tưởng", "a false belief held despite evidence against it", "She suffered from the ___ that she was being followed."],
+          ["rumination", "n", "sự nhai lại suy nghĩ tiêu cực", "repeatedly thinking about negative experiences", "___ keeps depression going."],
+          ["coping", "n", "sự ứng phó (với căng thẳng)", "ways of dealing with stress or difficulty", "Exercise is a healthy ___ strategy."],
+          ["attachment", "n", "sự gắn bó (tâm lý)", "a strong emotional bond, especially between child and caregiver", "Secure ___ in infancy predicts healthy relationships."],
+          ["mindfulness", "n", "chánh niệm", "paying full attention to the present moment", "___ meditation reduces anxiety."],
+          ["psychiatrist", "n", "bác sĩ tâm thần", "a medical doctor who treats mental illness", "A ___ can prescribe medication."]
         ]
       }
     ]
