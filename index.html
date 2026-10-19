@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Spelling Galaxy – Game học từ vựng tiếng Anh</title>
-  <meta name="description" content="Game học từ vựng tiếng Anh theo phong cách vũ trụ: gõ đúng từ để phóng tàu lên cao. 300 từ A1–C1, phát âm, gợi ý, lưu tiến độ." />
+  <meta name="description" content="Game bắn quái học từ vựng tiếng Anh: quái mang nghĩa tiếng Việt rơi xuống, gõ đúng từ để bắn hạ. 300 từ A1–C1, phát âm, gợi ý, lưu tiến độ." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
@@ -21,7 +21,7 @@
         <span class="brand-icon">🚀</span>
         <div>
           <h1>Spelling Galaxy</h1>
-          <p>Gõ đúng từ – phóng tàu lên cao</p>
+          <p>Gõ đúng từ – bắn hạ quái vật từ vựng</p>
         </div>
       </div>
       <div class="topbar-actions">
@@ -43,17 +43,12 @@
         <button class="mode-card active" data-mode="spell">
           <span class="mode-icon">⌨️</span>
           <strong>Gõ từ</strong>
-          <small>Xem nghĩa tiếng Việt + định nghĩa, gõ từ tiếng Anh</small>
+          <small>Quái mang nghĩa tiếng Việt rơi xuống, gõ từ tiếng Anh để bắn hạ</small>
         </button>
         <button class="mode-card" data-mode="listen">
           <span class="mode-icon">🎧</span>
           <strong>Nghe & gõ</strong>
-          <small>Nghe phát âm rồi gõ lại đúng chính tả</small>
-        </button>
-        <button class="mode-card" data-mode="choice">
-          <span class="mode-icon">🎯</span>
-          <strong>Trắc nghiệm</strong>
-          <small>Chọn đúng từ trong 4 đáp án, chơi nhanh</small>
+          <small>Quái không hiện nghĩa, chỉ phát âm. Nghe và gõ lại đúng chính tả</small>
         </button>
       </div>
     </section>
@@ -84,46 +79,44 @@
   <main id="screen-game" class="screen">
     <header class="game-top">
       <button class="icon-btn" id="btn-back" aria-label="Quay lại">←</button>
-      <div class="milestone" id="milestone">⚑ Mốc 1/10 · Unit 1</div>
+      <div class="milestone" id="milestone">⚑ Mốc 0/10 · Unit 1</div>
       <div class="hud">
+        <span class="hud-pill" id="hud-combo">🔥 x0</span>
         <span class="hud-pill" id="hud-score">⭐ 0</span>
         <span class="hud-pill lives" id="hud-lives">❤️❤️❤️</span>
+        <button class="icon-btn small" id="btn-pause" aria-label="Tạm dừng">⏸</button>
       </div>
     </header>
-
     <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
 
-    <section class="space" id="space">
-      <div class="combo" id="combo"></div>
+    <section class="arena" id="arena">
+      <canvas id="fx"></canvas>
+      <div class="enemies" id="enemies"></div>
+      <div class="danger-line"></div>
       <div class="ship" id="ship">🚀<span class="flame"></span></div>
-      <div class="planet" id="planet"></div>
+      <div class="arena-msg" id="arena-msg"></div>
+      <div class="pause-overlay" id="pause-overlay">
+        <div class="pause-box">
+          <h2>Tạm dừng</h2>
+          <p class="muted">Nhấn Esc hoặc nút bên dưới để chơi tiếp</p>
+          <div class="result-actions">
+            <button class="btn btn-secondary" id="btn-quit">🏠 Thoát</button>
+            <button class="btn btn-primary" id="btn-resume">▶ Chơi tiếp</button>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="card" id="card">
-      <div class="card-tags">
-        <span class="tag" id="tag-pos">n</span>
-        <span class="tag tag-level" id="tag-level">A1–A2</span>
+    <section class="console">
+      <div class="answer-row">
+        <input id="answer" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Gõ từ tiếng Anh rồi Enter để bắn…" />
+        <button class="btn btn-primary" id="btn-submit">🔫 Bắn</button>
       </div>
-      <h2 class="meaning" id="meaning">nghĩa tiếng Việt</h2>
-      <p class="definition" id="definition">English definition</p>
-      <p class="example" id="example"></p>
-
-      <div class="letters" id="letters"></div>
-
-      <div class="answer-row" id="answer-row">
-        <input id="answer" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Gõ từ tiếng Anh rồi Enter…" />
-        <button class="btn btn-primary" id="btn-submit">Kiểm tra</button>
-      </div>
-
-      <div class="choices" id="choices"></div>
-
       <div class="tools">
-        <button class="tool" id="btn-speak">🔊 Phát âm</button>
-        <button class="tool" id="btn-hint">💡 Gợi ý <small>(-2)</small></button>
-        <button class="tool" id="btn-skip">⏭ Bỏ qua</button>
+        <button class="tool" id="btn-speak">🔊 Phát âm quái gần nhất</button>
+        <button class="tool" id="btn-hint">💡 Gợi ý 1 chữ <small>(-2)</small></button>
+        <span class="feedback" id="feedback"></span>
       </div>
-
-      <div class="feedback" id="feedback"></div>
     </section>
   </main>
 

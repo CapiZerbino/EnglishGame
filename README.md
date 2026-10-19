@@ -1,16 +1,16 @@
 # 🚀 Spelling Galaxy – Game học từ vựng tiếng Anh
 
-Game học từ vựng tiếng Anh chơi trực tiếp trên web, lấy cảm hứng từ các game "spelling bee" phong cách vũ trụ:
-xem nghĩa tiếng Việt + định nghĩa tiếng Anh, gõ đúng từ để phóng tàu bay lên cao.
+Game **bắn quái học từ vựng** tiếng Anh chơi trực tiếp trên web, kiểu Chicken Invaders / ZType:
+quái vật mang **nghĩa tiếng Việt** (và định nghĩa tiếng Anh) rơi từ trên xuống, bạn **gõ đúng từ tiếng Anh rồi Enter** để tàu bắn laser hạ chúng.
+Để quái lọt qua vạch đỏ là mất 1 mạng; hết 3 mạng là thua.
 
 ## Tính năng
 
 - **300 từ · 30 unit · 3 cấp độ** (A1–A2, B1–B2, C1), mỗi unit 10 từ theo chủ đề.
-- **3 chế độ chơi**
-  - ⌨️ **Gõ từ**: xem nghĩa tiếng Việt, định nghĩa và câu ví dụ, gõ từ tiếng Anh.
-  - 🎧 **Nghe & gõ**: nghe phát âm (Web Speech API) rồi gõ lại đúng chính tả.
-  - 🎯 **Trắc nghiệm**: chọn 1 trong 4 đáp án, hỗ trợ phím 1–4.
-- **Cơ chế game**: điểm, combo, 3 mạng, gợi ý từng chữ (-2 điểm), bỏ qua, hiệu ứng tàu bay + pháo hoa, âm thanh.
+- **2 chế độ chơi**
+  - ⌨️ **Gõ từ**: quái hiện nghĩa tiếng Việt + định nghĩa tiếng Anh + số chữ cái, gõ từ để bắn.
+  - 🎧 **Nghe & gõ**: quái không hiện nghĩa, chỉ phát âm (Web Speech API); nghe rồi gõ lại đúng chính tả. Bấm vào quái để nghe lại.
+- **Cơ chế game**: tối đa 3 quái cùng lúc, tốc độ rơi tăng dần theo cấp độ và unit; điểm + thưởng combo + thưởng bắn sớm; 3 mạng; gợi ý 1 chữ cho quái gần nhất (-2 điểm, phím Tab); tạm dừng (Esc); laser, nổ, âm thanh.
 - **Lưu tiến độ** bằng `localStorage`: XP, sao từng unit, từ đã thuộc, chuỗi ngày học, danh sách từ hay sai để **ôn tập lại**.
 - Giao diện tiếng Việt, **dark/light mode**, responsive cho điện thoại.
 - Không cần build, không phụ thuộc thư viện ngoài (chỉ dùng Google Fonts).
