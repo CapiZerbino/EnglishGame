@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Spelling Galaxy – Game học từ vựng tiếng Anh</title>
+  <meta name="description" content="Game học từ vựng tiếng Anh theo phong cách vũ trụ: gõ đúng từ để phóng tàu lên cao. 300 từ A1–C1, phát âm, gợi ý, lưu tiến độ." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <!-- ===== HOME ===== -->
+  <main id="screen-home" class="screen active">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-icon">🚀</span>
+        <div>
+          <h1>Spelling Galaxy</h1>
+          <p>Gõ đúng từ – phóng tàu lên cao</p>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <button class="icon-btn" id="btn-theme" title="Đổi giao diện sáng/tối" aria-label="Đổi giao diện">🌙</button>
+        <button class="icon-btn" id="btn-sound" title="Bật/tắt âm thanh" aria-label="Âm thanh">🔊</button>
+      </div>
+    </header>
+
+    <section class="stats-row" id="home-stats">
+      <div class="stat"><span class="stat-num" id="stat-xp">0</span><span class="stat-label">XP</span></div>
+      <div class="stat"><span class="stat-num" id="stat-words">0</span><span class="stat-label">từ đã thuộc</span></div>
+      <div class="stat"><span class="stat-num" id="stat-stars">0</span><span class="stat-label">sao</span></div>
+      <div class="stat"><span class="stat-num" id="stat-streak">0</span><span class="stat-label">ngày liên tiếp</span></div>
+    </section>
+
+    <section class="panel">
+      <h2 class="panel-title">Chế độ chơi</h2>
+      <div class="mode-grid" id="mode-grid">
+        <button class="mode-card active" data-mode="spell">
+          <span class="mode-icon">⌨️</span>
+          <strong>Gõ từ</strong>
+          <small>Xem nghĩa tiếng Việt + định nghĩa, gõ từ tiếng Anh</small>
+        </button>
+        <button class="mode-card" data-mode="listen">
+          <span class="mode-icon">🎧</span>
+          <strong>Nghe & gõ</strong>
+          <small>Nghe phát âm rồi gõ lại đúng chính tả</small>
+        </button>
+        <button class="mode-card" data-mode="choice">
+          <span class="mode-icon">🎯</span>
+          <strong>Trắc nghiệm</strong>
+          <small>Chọn đúng từ trong 4 đáp án, chơi nhanh</small>
+        </button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2 class="panel-title">Chọn Unit</h2>
+        <div class="level-tabs" id="level-tabs"></div>
+      </div>
+      <div class="unit-grid" id="unit-grid"></div>
+    </section>
+
+    <section class="panel review-panel" id="review-panel">
+      <div>
+        <h2 class="panel-title">Ôn lại từ sai</h2>
+        <p class="muted" id="review-desc">Chưa có từ nào cần ôn. Chơi vài unit trước nhé!</p>
+      </div>
+      <button class="btn btn-secondary" id="btn-review" disabled>Ôn tập ngay</button>
+    </section>
+
+    <footer class="foot">
+      <span>300 từ · 30 unit · A1 → C1</span>
+      <button class="link-btn" id="btn-reset">Xóa tiến độ</button>
+    </footer>
+  </main>
+
+  <!-- ===== GAME ===== -->
+  <main id="screen-game" class="screen">
+    <header class="game-top">
+      <button class="icon-btn" id="btn-back" aria-label="Quay lại">←</button>
+      <div class="milestone" id="milestone">⚑ Mốc 1/10 · Unit 1</div>
+      <div class="hud">
+        <span class="hud-pill" id="hud-score">⭐ 0</span>
+        <span class="hud-pill lives" id="hud-lives">❤️❤️❤️</span>
+      </div>
+    </header>
+
+    <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+
+    <section class="space" id="space">
+      <div class="combo" id="combo"></div>
+      <div class="ship" id="ship">🚀<span class="flame"></span></div>
+      <div class="planet" id="planet"></div>
+    </section>
+
+    <section class="card" id="card">
+      <div class="card-tags">
+        <span class="tag" id="tag-pos">n</span>
+        <span class="tag tag-level" id="tag-level">A1–A2</span>
+      </div>
+      <h2 class="meaning" id="meaning">nghĩa tiếng Việt</h2>
+      <p class="definition" id="definition">English definition</p>
+      <p class="example" id="example"></p>
+
+      <div class="letters" id="letters"></div>
+
+      <div class="answer-row" id="answer-row">
+        <input id="answer" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Gõ từ tiếng Anh rồi Enter…" />
+        <button class="btn btn-primary" id="btn-submit">Kiểm tra</button>
+      </div>
+
+      <div class="choices" id="choices"></div>
+
+      <div class="tools">
+        <button class="tool" id="btn-speak">🔊 Phát âm</button>
+        <button class="tool" id="btn-hint">💡 Gợi ý <small>(-2)</small></button>
+        <button class="tool" id="btn-skip">⏭ Bỏ qua</button>
+      </div>
+
+      <div class="feedback" id="feedback"></div>
+    </section>
+  </main>
+
+  <!-- ===== RESULT ===== -->
+  <main id="screen-result" class="screen">
+    <section class="result-card">
+      <div class="result-stars" id="result-stars">☆☆☆</div>
+      <h2 id="result-title">Hoàn thành!</h2>
+      <p class="muted" id="result-sub">Unit 1 · Daily life</p>
+      <div class="result-grid">
+        <div><span class="r-num" id="r-score">0</span><span class="r-label">điểm</span></div>
+        <div><span class="r-num" id="r-acc">0%</span><span class="r-label">chính xác</span></div>
+        <div><span class="r-num" id="r-combo">0</span><span class="r-label">combo tốt nhất</span></div>
+        <div><span class="r-num" id="r-xp">+0</span><span class="r-label">XP</span></div>
+      </div>
+      <div class="wrong-list" id="wrong-list"></div>
+      <div class="result-actions">
+        <button class="btn btn-secondary" id="btn-home">🏠 Trang chủ</button>
+        <button class="btn btn-secondary" id="btn-retry">🔁 Chơi lại</button>
+        <button class="btn btn-primary" id="btn-next">Unit tiếp theo →</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
