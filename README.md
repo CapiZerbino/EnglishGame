@@ -27,9 +27,10 @@ python3 -m http.server 8080
 
 ## Deploy lên GitHub Pages
 
-1. Vào **Settings → Pages** của repo.
-2. Chọn **Deploy from a branch**, branch `main`, thư mục `/ (root)`.
-3. Vài phút sau game sẽ chạy tại `https://<user>.github.io/<repo>/`.
+Repo có sẵn workflow `.github/workflows/pages.yml`: mỗi lần push lên `main`, GitHub Actions tự deploy toàn bộ thư mục lên GitHub Pages.
+Game chạy tại **https://capizerbino.github.io/EnglishGame/**.
+
+Nếu Pages chưa bật, vào **Settings → Pages**, chọn Source là **GitHub Actions** rồi chạy lại workflow.
 
 ## Cấu trúc
 
